@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Calculadora Impresión 3D</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    </head>
+    
+    <body>
+        <header>
+            <!-- Navbar start -->
+            <nav class="nav-bar" id="nav-bar">
+                <img src="assets/logo.svg" alt="">
+                <ul>
+                    <li>Sobre la calculadora</li>
+                    <li>Donar</li>
+                </ul>
+            </nav>
+            <!-- Navbar end -->
+        </header>
+
+        <main>
+            <!-- Home start -->
+            <section id="home-section">
+                <h1 class="title" id="title">Averigüa cuánto costará tu impresión 3D </h1>
+                <button id="btn-comenzar">Comenzar</button>
+                <iframe src='https://my.spline.design/untitled-f83d83d158bca40c166c481ebdc0e658/' frameborder='0' width='100%' height='100%'></iframe>
+                <p>Drag and move</p>
+            </section>
+            <!-- Home end -->
+            
+            <section id="calculadora-section">
+                <!-- calculadora start -->
+                <form action="" id="calculadora">
+                    <!--  nombre pieza -->
+                    <div class="input-group mb-3">
+                        <label for="" class="label">Nombre de la pieza</label>
+                        <input type="text" id="nombre" class="form-control" placeholder="Ingresa el nombre de la pieza" aria-describedby="basic-addon1">
+                        <p>Ingresa un nombre de identificación</p>
+                    </div>
+                    <!--  peso pieza -->
+                    <div class="input-group mb-3">
+                        <label for="" class="label">Peso de la pieza</label>
+                        <input type="numeric" id="peso" class="form-control" placeholder="0" aria-describedby="basic-addon1">
+                        <span class="input-group-text" id="basic-addon1">g</span>
+                        <p>Ingresa el peso debe estar en gramos (g)</p>
+                    </div>
+                    <!--  filamento costo -->
+                    <div class="input-group mb-3">
+                        <label for="" class="label">Costo del filamento</label>
+                        <input type="numeric" id="filamento" class="form-control" placeholder="0" aria-describedby="basic-addon1">
+                        <span class="input-group-text" id="basic-addon1">$</span>
+                        <p>Ingresa el costo de 1kg de filamento en CLP</p>
+                    </div>
+                    <!--  tiempo impr -->
+                    <div class="input-group mb-3">
+                        <label for="" class="label">Tiempo de impresión</label>
+                        <input type="numeric" id="tiempo" class="form-control" placeholder="0" aria-describedby="basic-addon1">
+                        <span class="input-group-text" id="basic-addon1">hrs</span>
+                        <p>Ingresa el tiempo en horas </p>
+                    </div>
+                    <!--  namo obra -->
+                    <div class="input-group mb-3">
+                        <label for="" class="label">Costo mano de obra</label>
+                        <input type="numeric" id="mano-obra" class="form-control" placeholder="0" aria-describedby="basic-addon1">
+                        <span class="input-group-text" id="basic-addon1">$</span>
+                        <p>Ingresa el costo en CLP</p>
+                    </div>
+
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Agregar a cotización</label>
+                    </div>
+
+                    <button type="submit" id="calcular">Calcular</button>
+                </form>
+                <!-- calculadora end -->
+
+                <h2 class="title" id="costo">Costo: $0</h2>
+
+            </section>
+
+            <!-- cotizacion start -->
+            <section id="cotizacion-section">
+                <ul id="cotizacion-list">
+
+                </ul>
+
+                <h2 class="title" id="total">Total: $0</h2>
+
+                <button>Descargar</button>
+            </section>
+            <!-- cotizacion start -->
+
+        </main>
+
+        <footer>
+            <p>Copyright © 2022, All rights reserved.</p>
+        </footer>
+
+        <script src="js/obj.js"></script>
+        <script src="js/main.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    </body>
+</html>
