@@ -99,7 +99,7 @@ calcularImpresion3D = () => {
 
  addToCotizacion();
 
-        //6) se recorre el arrayse suman los costos y se imprime el resultado en el html totales
+        //6) se recorre el array y se suman los costos
 
         calcularTotal = () => {
             let total = 0;
@@ -107,12 +107,19 @@ calcularImpresion3D = () => {
             cotizaciones.forEach(resultadoCalculo => {
                 total += resultadoCalculo.costoTotal;
             });
-
+            
+            //7) se imprime el resultado en el html "total"
             let totalhtml = document.getElementById("total");
             totalhtml.innerText = "Total: $" + Math.round(total);
+
+            const guardarSesion = (CotizacionesArr, cotizaciones)
+            sessionStorage.setItem("CotizacionesArr", cotizaciones);
+            const convertirjson = JSON.stringify(CotizacionesArr);
+            console.log(convertirjson);
         }
 
-        
+        calcularTotal();
+          
     } 
 }
 
@@ -122,3 +129,6 @@ btnCalcular.onclick = () => {
   
     calcularImpresion3D();
 }
+
+
+ 
