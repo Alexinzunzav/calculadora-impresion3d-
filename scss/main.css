@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+/* Fonts */
+/* Fonts */
+/* Color */
+/* Color */
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -ms-grid;
+  display: grid;
+}
+
+header {
+  height: auto;
+  width: 100%;
+}
+
+header nav {
+  height: 4rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  z-index: 999;
+  background-color: rgba(242, 242, 242, 0.5);
+}
+
+header nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main {
+  width: 100%;
+  height: auto;
+  background-color: #232325;
+}
+
+main .home-section {
+  height: 100vh;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+}
+
+main .home-section div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main .home-section div h1 {
+  width: auto;
+  color: #f2f2f2;
+  font-size: 4rem;
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  margin: 8rem 0 4rem 0;
+}
+
+main .home-section div button {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+main .home-section img {
+  height: 50vh;
+  width: auto;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+main .input-section {
+  height: auto;
+  width: auto;
+  display: -ms-grid;
+  display: grid;
+}
+
+main .input-section form {
+  background-color: #f2f2f2;
+  width: auto;
+  padding: 3rem;
+  margin: 10rem;
+}
+
+main .input-section form h2 {
+  color: #6633FF;
+  font-size: 3rem;
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+}
+
+main .input-section form div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: auto;
+}
+
+main #cotizacion-section {
+  background-color: #232325;
+}
+
+main #cotizacion-section div {
+  background-color: #f2f2f2;
+  width: auto;
+  padding: 3rem;
+  margin: 10rem;
+}
+
+main #cotizacion-section div h2 {
+  color: #6633FF;
+  font-size: 3rem;
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+}
+
+footer {
+  height: auto;
+  width: 100%;
+  background-color: #232325;
+}
+
+footer p {
+  color: #f2f2f2;
+}
+/*# sourceMappingURL=main.css.map */

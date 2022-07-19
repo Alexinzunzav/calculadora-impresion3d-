@@ -1,0 +1,123 @@
+@import 'variables';
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: grid;
+}
+
+header {
+    height: auto;
+    width: 100%;
+
+        & nav {
+            height: 4rem;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            z-index: 999;
+            background-color: $base-color-white-transparent;
+
+            & ul {
+                display: flex;
+            }
+        }
+}
+
+main {
+    width: 100%;
+    height: auto;
+    background-color: $base-color-black;   
+
+    .home-section {
+        height: 100vh;
+        width: 100%;
+        display: grid;
+        
+
+        & div {
+            display: flex;
+            flex-direction: column;
+
+            & h1 {
+                width: auto;
+                color: $base-color-white;
+                font-size: map-get($font-size, xl);
+                font-family: $primary-font;
+                font-weight: map-get($font-weights, "black");
+                margin: 8rem 0 4rem 0;
+            }
+
+            & button {
+                align-self: center;
+            }
+        }
+        
+        & img {
+            height: 50vh;
+            width: auto;
+            align-self: center;
+            
+        }
+    }
+
+    .input-section {
+        height: auto;
+        width: auto;
+        display: grid;
+        
+        & form {
+            background-color: $base-color-white;
+            width: auto;
+            padding: 3rem;
+            margin: 10rem;
+
+            & h2 {
+                color: $accent-color;
+                font-size: map-get($font-size, lg);
+                font-family: $primary-font;
+                font-weight: map-get($font-weights, "black");
+            }
+
+            & div {
+                display: flex;
+                flex-direction: column;
+                width: auto;
+            } 
+        }
+    }
+
+    #cotizacion-section {
+
+        background-color: $base-color-black;
+        
+
+        & div {
+            background-color: $base-color-white;
+            width: auto;
+            padding: 3rem;
+            margin: 10rem;
+
+            & h2 {
+                color: $accent-color;
+                font-size: map-get($font-size, lg);
+                font-family: $primary-font;
+                font-weight: map-get($font-weights, "black");
+            }
+        }
+    }
+    
+}
+
+footer {
+    height: auto;
+    width: 100%;
+    background-color: $base-color-black;
+
+    & p {
+        color: $base-color-white;
+    }
+}

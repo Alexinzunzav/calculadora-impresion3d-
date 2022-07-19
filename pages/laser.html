@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-        <link rel="stylesheet" href="scss/main.css">
+        <link rel="stylesheet" href="../scss/main.css">
     </head>
     
     <body>
@@ -13,23 +13,23 @@
             <!-- Navbar start -->
             <nav class="">
                 
-                <a class="" href="home-section">
-                    <img src="assets/logo'blue.svg" alt="logo">
+                <a class="" href="../index.html">
+                    <img src="../assets/logo'blue.svg" alt="logo">
                 </a>
                 
                 <div class="" id="">
                     <ul class="">
                         <li class="">
-                            <a class="" href="#calculadora-section">Impresión 3D</a>
+                            <a class="" href="../index.html#calculadora-section">Impresión 3D</a>
                         </li>
                         <li class="">
-                            <a class="" href="pages/laser.html">CNC Laser</a>
+                            <a class="" href="laser.html">CNC Laser</a>
                         </li>
                         <li class="">
-                            <a class="" href="pages/router.html">CNC Router</a>
+                            <a class="" href="router.html">CNC Router</a>
                         </li>
                         <li class="">
-                            <a class="" href="pages/cotizaciones.html">Cotizaciones</a>
+                            <a class="" href="cotizaciones.html">Cotizaciones</a>
                         </li>
                     </ul>
                 </div>
@@ -40,22 +40,12 @@
         </header>
 
         <main>
-            <!-- Home start -->
-            <section class="home-section" id="home-section">
-                <div class="h1-wrapper container">
-                    <h1 class="title text-center" id="title">Averigüa cuánto costará tu proyecto de fabricación digital</h1>
-                    <button class="btn-comenzar" id="btn-comenzar">Comenzar</button>
-                    <img src="assets/bote.png" alt="bote impresion 3d">  <!-- cambair esta imagen con un modelo con three.js -->
-                </div>
-                
-            </section>
-            <!-- Home end -->
             
             <section class="input-section" id="calculadora-section">
                 
                 <!-- calculadora start -->
                 <form action="" id="calculadora">
-                    <h2 class="title">Impresión 3D</h2>
+                    <h2 class="title">CNC Laser</h2>
                     <!--  nombre pieza -->
                     <div class="">
                         <label for="" class="label">Nombre de la pieza</label>
@@ -64,28 +54,11 @@
                     </div>
                     <!--  peso pieza -->
                     <div class="">
-                        <label for="" class="label">Peso de la pieza</label>
+                        <label for="" class="label">???</label>
                         <input type="numeric" id="peso" class="form-control" placeholder="0g" aria-describedby="basic-addon1">
-                        <p>Ingresa el peso debe estar en gramos (g)</p>
+                        <p>???</p>
                     </div>
                     <!--  filamento costo -->
-                    <div class="">
-                        <label for="" class="label">Costo del filamento</label>
-                        <input type="numeric" id="filamento" class="form-control" placeholder="0$" aria-describedby="basic-addon1">
-                        <p>Ingresa el costo de 1kg de filamento en CLP</p>
-                    </div>
-                    <!--  tiempo impr -->
-                    <div class="">
-                        <label for="" class="label">Tiempo de impresión</label>
-                        <input type="numeric" id="tiempo" class="form-control" placeholder="0hrs" aria-describedby="basic-addon1">
-                        <p>Ingresa el tiempo en horas </p>
-                    </div>
-                    <!--  namo obra -->
-                    <div class="">
-                        <label for="" class="label">Costo mano de obra</label>
-                        <input type="numeric" id="mano-obra" class="form-control" placeholder="0$" aria-describedby="basic-addon1">
-                        <p>Ingresa el costo en CLP</p>
-                    </div>
 
                     <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
@@ -98,21 +71,7 @@
                 </form>
                 <!-- calculadora end -->
 
-                
-
             </section>
-
-            <!-- cotizacion start -->
-           <!--  <section id="cotizacion-section">
-                <ul id="cotizacion-list">
-
-                </ul>
-
-                <h2 class="title" id="total">Total: $0</h2>
-
-                <button>Descargar</button>
-            </section> -->
-            <!-- cotizacion start -->
 
         </main>
 
@@ -120,8 +79,8 @@
             <p>Copyright © 2022, All rights reserved.</p>
         </footer>
 
-        <script src="js/obj.js"></script>
-        <script src="js/main.js"></script>
+        <script src="../js/obj.js"></script>
+        <script src="../js/main.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     </body>
 </html>

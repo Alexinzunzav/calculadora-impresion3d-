@@ -112,10 +112,13 @@ calcularImpresion3D = () => {
             let totalhtml = document.getElementById("total");
             totalhtml.innerText = "Total: $" + Math.round(total);
 
-            const guardarSesion = (CotizacionesArr, cotizaciones)
+
+
+            
+            /* const guardarSesion = (CotizacionesArr, cotizaciones)
             sessionStorage.setItem("CotizacionesArr", cotizaciones);
             const convertirjson = JSON.stringify(CotizacionesArr);
-            console.log(convertirjson);
+            console.log(convertirjson); */
         }
 
         calcularTotal();
