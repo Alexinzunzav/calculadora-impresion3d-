@@ -23,12 +23,6 @@
                             <a class="" href="#calculadora-section">Impresión 3D</a>
                         </li>
                         <li class="">
-                            <a class="" href="pages/laser.html">CNC Laser</a>
-                        </li>
-                        <li class="">
-                            <a class="" href="pages/router.html">CNC Router</a>
-                        </li>
-                        <li class="">
                             <a class="" href="pages/cotizaciones.html">Cotizaciones</a>
                         </li>
                     </ul>
@@ -54,35 +48,35 @@
             <section class="input-section" id="calculadora-section">
                 
                 <!-- calculadora start -->
-                <form action="" id="calculadora">
+                <form class="calculadora" id="calculadora">
                     <h2 class="title">Impresión 3D</h2>
                     <!--  nombre pieza -->
                     <div class="">
-                        <label for="" class="label">Nombre de la pieza</label>
+                        <label for="nombre" class="label">Nombre de la pieza</label>
                         <input type="text" id="nombre" class="form-control" placeholder="Ingresa el nombre de la pieza" aria-describedby="basic-addon1">
                         <p>Ingresa un nombre de identificación</p>
                     </div>
                     <!--  peso pieza -->
                     <div class="">
-                        <label for="" class="label">Peso de la pieza</label>
+                        <label for="peso" class="label">Peso de la pieza</label>
                         <input type="numeric" id="peso" class="form-control" placeholder="0g" aria-describedby="basic-addon1">
                         <p>Ingresa el peso debe estar en gramos (g)</p>
                     </div>
                     <!--  filamento costo -->
                     <div class="">
-                        <label for="" class="label">Costo del filamento</label>
+                        <label for="filamento" class="label">Costo del filamento</label>
                         <input type="numeric" id="filamento" class="form-control" placeholder="0$" aria-describedby="basic-addon1">
                         <p>Ingresa el costo de 1kg de filamento en CLP</p>
                     </div>
                     <!--  tiempo impr -->
                     <div class="">
-                        <label for="" class="label">Tiempo de impresión</label>
+                        <label for="tiempo" class="label">Tiempo de impresión</label>
                         <input type="numeric" id="tiempo" class="form-control" placeholder="0hrs" aria-describedby="basic-addon1">
                         <p>Ingresa el tiempo en horas </p>
                     </div>
                     <!--  namo obra -->
                     <div class="">
-                        <label for="" class="label">Costo mano de obra</label>
+                        <label for="mano-obra" class="label">Costo mano de obra</label>
                         <input type="numeric" id="mano-obra" class="form-control" placeholder="0$" aria-describedby="basic-addon1">
                         <p>Ingresa el costo en CLP</p>
                     </div>
@@ -103,15 +97,16 @@
             </section>
 
             <!-- cotizacion start -->
-           <!--  <section id="cotizacion-section">
-                <ul id="cotizacion-list">
+            <section id="cotizacion-section">
+                <div>
+                    <h2 class="title">Cotizaciones</h2>
+                    <ul id="cotizacion-list">
 
-                </ul>
-
-                <h2 class="title" id="total">Total: $0</h2>
-
-                <button>Descargar</button>
-            </section> -->
+                    </ul>
+                    <h3 class="title" id="total">Total: $0</h3>
+                    <!-- <button>Descargar</button> -->
+                </div>              
+            </section>
             <!-- cotizacion start -->
 
         </main>
@@ -125,3 +120,4 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     </body>
 </html>
+

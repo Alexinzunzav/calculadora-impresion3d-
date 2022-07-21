@@ -14,12 +14,5 @@ class cotizacionServicio3d {
         this.electricidad = electricidad;
         this.costoTotal = costoTotal;
     }
-
-    
-    totalizar() {
-        this.costoTotal = (this.filamento3d * this.pesoPieza / 1000) + this.manoObra + (this.electricidad * this.tiempoImpresion) + (this.impresora / 150); 
-    }
-    
-
 }
 

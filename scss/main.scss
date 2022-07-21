@@ -69,7 +69,7 @@ main {
         width: auto;
         display: grid;
         
-        & form {
+        .calculadora {
             background-color: $base-color-white;
             width: auto;
             padding: 3rem;

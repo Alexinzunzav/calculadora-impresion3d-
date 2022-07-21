@@ -93,21 +93,21 @@ main .input-section {
   display: grid;
 }
 
-main .input-section form {
+main .input-section .calculadora {
   background-color: #f2f2f2;
   width: auto;
   padding: 3rem;
   margin: 10rem;
 }
 
-main .input-section form h2 {
+main .input-section .calculadora h2 {
   color: #6633FF;
   font-size: 3rem;
   font-family: "Lato", sans-serif;
   font-weight: 900;
 }
 
-main .input-section form div {
+main .input-section .calculadora div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

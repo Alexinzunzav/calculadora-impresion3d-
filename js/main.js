@@ -1,137 +1,144 @@
 
-//  Calculadora costo imrpesion 3d (se guardan las cotizaciones en arrays)
 
-//  Se definen variables
-
-let nombre = "";
-let pesoPieza = "";
-let filamento3d = "";
-let tiempoImpresion = "";
-let manoObra = "";
-let impresora = "";
-let electricidad = "";
-let costoTotal = 0;
-
+// se leen los elementos form, botones y switch
 const form = document.getElementById("calculadora");
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+  });
+    
 const btnCalcular = document.getElementById("calcular");
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault()
-})
-
-//CTA Comenzar lleva a la calculadora
 const btnComenzar = document.getElementById("btn-comenzar");
 btnComenzar.addEventListener("click", (e) => {
-    window.location.href = "#calculadora-section";
+  window.location.href = "#calculadora-section";
 });
 
-// Si el toggle switch esta prendido o apagado cambia el copy del boton
-let switchCotizacion = document.getElementById("flexSwitchCheckDefault")/* .checked */;
+let switchCotizacion = document.getElementById(
+    "flexSwitchCheckDefault"
+    );
+
 switchCotizacion.addEventListener("change", (e) => {
     if (e.target.checked) {
-        btnCalcular.innerText = 'Calcular y agregar';
+      btnCalcular.innerText = "Calcular y agregar";
     } else {
-        btnCalcular.innerText = 'Calcular';
+      btnCalcular.innerText = "Calcular";
     }
 });
 
-//Se define la funcion para calcular el costo
-calcularImpresion3D = () => {
 
-    //1) se reciben los datos desde el html
-    let nombre = document.getElementById("nombre").value;
-    let pesoPieza = parseInt(document.getElementById("peso").value);
-    let filamento3d = parseInt(document.getElementById("filamento").value);
-    let tiempoImpresion = parseInt(document.getElementById("tiempo").value);
-    let manoObra = parseInt(document.getElementById("mano-obra").value);
-    let impresora = 299990;
-    let electricidad = 144;
-    
+// ****Definición de funciones****
 
-    // se lee el toggle switch
-    let switchCotizacion = document.getElementById("flexSwitchCheckDefault").checked;
+// guardar arr en localStorage
+guardarArr = () => {
+  // Se capturan los datos de la cotizacion guardados en la localstorage
+  const cotizacionesJSON = JSON.stringify(cotizaciones);
+  const cotizacionesLS = localStorage.setItem('CotizacionesImpresion3D', cotizacionesJSON);
 
-    if (!switchCotizacion) {
-        //si el switch está apagado
-        //1) se calcula el costo
-        let costoTotal = (filamento3d * pesoPieza / 1000) + manoObra + (electricidad * tiempoImpresion) + (impresora / 150
-)
-
-        //2) se imprime el costo en el html
-        let costohtml = document.getElementById("costo");
-        costohtml.innerText = "Costo: $" + Math.round(costoTotal);
-
-    } else {
-        //si el switch está prendido
-        
-        //1) se calcula el costo
-        
-        let costoTotal = (filamento3d * pesoPieza / 1000) + manoObra + (electricidad * tiempoImpresion) + (impresora / 150
-)
-
- //2) se imprime el costo en el html
- let costohtml = document.getElementById("costo");
- costohtml.innerText = "Costo: $" + Math.round(costoTotal);
-
- //3) se define un nuevo obj y se empuja al array de cotizaciones
- const resultadoCalculo = new cotizacionServicio3d (nombre, pesoPieza, filamento3d, tiempoImpresion, manoObra, impresora, electricidad, costoTotal);
-
- //4) el obj se empuja al array de cotizaciones
- cotizaciones.push(resultadoCalculo);
- 
- //5) crea una lista con el nombre y el costo de cada pieza para generar la cotizacion
- addToCotizacion = () => {
-    
-     let cotizacionList = document.getElementById("cotizacion-list");
-     let cotizacionItem = document.createElement('li');
-     cotizacionList.append(cotizacionItem);
-     cotizacionItem.innerText = nombre + ": " + Math.round(costoTotal);
-
-     let btnEliminar = document.createElement('button');
-     cotizacionItem.append(btnEliminar);
-     btnEliminar.innerText = "Eliminar";
-
-     btnEliminar.onclick = () => {
-         cotizacionList.removeChild(cotizacionItem);
-     }
-
- }
-
- addToCotizacion();
-
-        //6) se recorre el array y se suman los costos
-
-        calcularTotal = () => {
-            let total = 0;
-
-            cotizaciones.forEach(resultadoCalculo => {
-                total += resultadoCalculo.costoTotal;
-            });
-            
-            //7) se imprime el resultado en el html "total"
-            let totalhtml = document.getElementById("total");
-            totalhtml.innerText = "Total: $" + Math.round(total);
-
-
-
-            
-            /* const guardarSesion = (CotizacionesArr, cotizaciones)
-            sessionStorage.setItem("CotizacionesArr", cotizaciones);
-            const convertirjson = JSON.stringify(CotizacionesArr);
-            console.log(convertirjson); */
-        }
-
-        calcularTotal();
-          
-    } 
 }
+//imprimir el nombre y el costo de la pieza a fabricar en la cotizacion
+imprimirEnCotizacion = () => {
+  // Se capturan los datos de la cotizacion guardados en la localstorage
+  let datosCapturados = localStorage.getItem('CotizacionesImpresion3D');
+  let cotizacionesArr = JSON.parse(datosCapturados);
+  
+  //Se recorre el arr de objetos para obtener el nombre y el costo de la pieza
+  for (const datosCapturados of cotizacionesArr) {
+
+    //se crean y agregan los datos a li en el html
+    let cotizacionList = document.getElementById("cotizacion-list");
+    let cotizacionItem = document.createElement('li');
+    let btnEliminar = document.createElement('button');
+    cotizacionItem.innerText = datosCapturados.nombre + ": " +  Math.round(datosCapturados.costoTotal);
+    btnEliminar.innerText = "Eliminar";
+    cotizacionList.append(cotizacionItem);
+    cotizacionItem.append(btnEliminar);
+  
+    btnEliminar.onclick = () => {
+      cotizacionList.removeChild(cotizacionItem);
+      
+    } 
+  }
+}
+
+//Calcular total cotizaciones
+/* calcularTotal = () => {
+  let total = 0;
+
+  
+  cotizaciones.forEach((resultadoCalculo) => {
+    total += resultadoCalculo.costoTotal;
+  });
+
+  let totalhtml = document.getElementById("total");
+  totalhtml.innerText = "Total: $" + Math.round(total);
+
+  
+} */
+
+// Calcular costo total
+let calculoCostoTotal3D = () => {
+  let nombre = document.getElementById("nombre").value;
+  let pesoPieza = parseInt(document.getElementById("peso").value);
+  let filamento3d = parseInt(document.getElementById("filamento").value);
+  let tiempoImpresion = parseInt(document.getElementById("tiempo").value);
+  let manoObra = parseInt(document.getElementById("mano-obra").value);
+  let impresora = 299990;
+  let electricidad = 144;
+ 
+
+  let switchCotizacion = document.getElementById(
+    "flexSwitchCheckDefault"
+  ).checked;
+  
+  if (!switchCotizacion) {
+     // calcula los datos del html
+    let costoTotal = (filamento3d * pesoPieza) / 1000 + manoObra + electricidad * tiempoImpresion + impresora / 150;  
+
+    //luego los imprime en el html
+    let costohtml = document.getElementById("costo");
+    costohtml.innerText = "Costo: $" + Math.round(costoTotal);
+    console.log(costoTotal);
+  } else {
+      // calcula los datos del html
+      let costoTotal = (filamento3d * pesoPieza) / 1000 + manoObra + electricidad * tiempoImpresion + impresora / 150;  
+
+      //luego los imprime en el html
+      let costohtml = document.getElementById("costo");
+      costohtml.innerText = "Costo: $" + Math.round(costoTotal);
+      console.log(costoTotal);
+
+      //Se define un nuevo objeto con los datos obtenidos
+      const resultadoCalculo = new cotizacionServicio3d(
+        nombre,
+        pesoPieza,
+        filamento3d,
+        tiempoImpresion,
+        manoObra,
+        impresora,
+        electricidad,
+        costoTotal
+      );
+
+      //se pushea al array
+      cotizaciones.push(resultadoCalculo);
+      console.log(resultadoCalculo);
+       
+      //se ejecuta la funcion para guardar el arr en el localStorage
+      guardarArr();
+      
+      //se ejecuta la funcion para agregar items en cotizaciones
+      imprimirEnCotizacion();
+
+      /* calcularTotal(); */
+  }
+ 
+}
+
+
+
 
 
 
 btnCalcular.onclick = () => {
-  
-    calcularImpresion3D();
+  calculoCostoTotal3D();
 }
-
-
- 
