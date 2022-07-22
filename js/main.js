@@ -40,31 +40,29 @@ imprimirEnCotizacion = () => {
   // Se capturan los datos de la cotizacion guardados en la localstorage
   let datosCapturados = localStorage.getItem('CotizacionesImpresion3D');
   let cotizacionesArr = JSON.parse(datosCapturados);
-  
-  //Se recorre el arr de objetos para obtener el nombre y el costo de la pieza
-  for (const datosCapturados of cotizacionesArr) {
 
-    //se crean y agregan los datos a li en el html
-    let cotizacionList = document.getElementById("cotizacion-list");
-    let cotizacionItem = document.createElement('li');
-    let btnEliminar = document.createElement('button');
-    cotizacionItem.innerText = datosCapturados.nombre + ": " +  Math.round(datosCapturados.costoTotal);
-    btnEliminar.innerText = "Eliminar";
-    cotizacionList.append(cotizacionItem);
-    cotizacionItem.append(btnEliminar);
+  //Se seleccioan el ultimo obj
+  const cotizacionesArrReversed = cotizacionesArr.reverse();
+  let ultimaCotizacion = cotizacionesArrReversed[0];
   
-    btnEliminar.onclick = () => {
-      cotizacionList.removeChild(cotizacionItem);
-      
-    } 
-  }
+  //se crean y agregan los datos a li en el html
+  let cotizacionList = document.getElementById("cotizacion-list");
+  let cotizacionItem = document.createElement('li');
+  cotizacionItem.innerText = ultimaCotizacion.nombre + ": " +  Math.round(ultimaCotizacion.costoTotal);
+  cotizacionList.append(cotizacionItem);
+
+  let btnEliminar = document.createElement('button');
+  cotizacionItem.append(btnEliminar);
+  btnEliminar.innerText = "Eliminar";
+  btnEliminar.onclick = () => {
+    cotizacionList.removeChild(cotizacionItem);
+  } 
 }
 
 //Calcular total cotizaciones
-/* calcularTotal = () => {
+calcularTotal = () => {
   let total = 0;
 
-  
   cotizaciones.forEach((resultadoCalculo) => {
     total += resultadoCalculo.costoTotal;
   });
@@ -73,7 +71,7 @@ imprimirEnCotizacion = () => {
   totalhtml.innerText = "Total: $" + Math.round(total);
 
   
-} */
+}
 
 // Calcular costo total
 let calculoCostoTotal3D = () => {
@@ -129,7 +127,7 @@ let calculoCostoTotal3D = () => {
       //se ejecuta la funcion para agregar items en cotizaciones
       imprimirEnCotizacion();
 
-      /* calcularTotal(); */
+      calcularTotal();
   }
  
 }
